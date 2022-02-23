@@ -9,8 +9,20 @@
 </head>
 
 <body>
+<h1>Coronavirus Tracker Application</h1>
+<p>This application displays the number of a cases reported across the globe</p>
 
-<p th:text="${testName}"> </p>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title" th:text="${totalReportedCases}" >Hello, world!</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Total cases as of today</h6>
+    </div>
+</div>
+
+
+
+
+<!--<p th:text="${testName}"> </p>-->
 
 <table>
     <tr>
