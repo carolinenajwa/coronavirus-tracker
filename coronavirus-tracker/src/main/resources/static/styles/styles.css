@@ -1,0 +1,29 @@
+h1 {
+    display: flex;
+    font-family: "Agency FB", serif;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.card-title {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.card-subtitle {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
