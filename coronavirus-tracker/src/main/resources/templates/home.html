@@ -3,6 +3,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+
+
+    <!--data--->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!----->
+
     <!-- include styles -->
     <link th:href="@{/styles/styles.css}" rel="stylesheet" />
 
@@ -27,8 +34,12 @@
 
 
 
+
 <!--top of the table-->
-<table class="table">
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <br>
+    <table id="myList" class="list-group">
+        <thead>
     <tr>
         <th>Country</th>
         <th>State</th>
@@ -36,7 +47,11 @@
         <th>Changes since last day</th>
 
     </tr>
+        </thead>
 
+
+
+<tbody>
     <tr th:each="locationStat : ${locationStats}">
         <td th:text="${locationStat.country}"></td>
         <td th:text="${locationStat.state}"></td>
@@ -44,9 +59,25 @@
         <td th:text="${locationStat.difFromPrevDay}">0</td>
 
     </tr>
+</tbody>
 </table>
 
+
+
+
 </div>
+
+
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            let value = $(this).val().toLowerCase();
+            $("#myList td").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 
 
 </body>
