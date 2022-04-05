@@ -1,62 +1,152 @@
-h1 {
-    display: flex;
-    font-family: "Agency FB", serif;
-    justify-content: center;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-p {
+/* custom properties */
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Sans Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light:#fff;
+    --clr-dark: #303030;
+    --clr-accent: gray;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+    0.125em 0.125em 0.25em rgba(0,0,0,.15);;
+
+}
+
+/* larger screen size*/
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* general styles */
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/* Typography */
+
+strong { font-weight: var(--fw-bold)}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1)}
+h2 { font-size: var(--fs-h2)}
+h3 { font-size: var(--fs-h3)}
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+
+}
+
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+
+}
+
+/* intro */
+
+.section__title--intro {
+    font-family: var(--ff-primary);
     display: flex;
-    justify-content: center;
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    text-align: center;
+    text-shadow: 2px 2px rgba(128, 128, 128, 0.38);
+
+
+}
+
+.section__subtitle--intro {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-reg);
+    text-align: center;
+    color: var(--clr-accent);
+
 }
 
 .box {
+    text-align: center;
     display: flex;
-    align-content: center;
     justify-content: center;
+}
+
+.card-subtitle{
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-bold);
 }
 
 .card-title {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    font-family: var(--ff-secondary);
+    box-shadow: var(--bs);
+    color: #15e738;
 }
 
-.card-subtitle {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+table#myList {
+    table-layout: fixed;
+    display: block;
 }
 
-#myInput {
-    background-image:url(https://fonts.google.com/icons?selected=Material%20Icons%20Outlined%3Asearch%3A) ; /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
-
-#myTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
-}
-
-#myTable th, #myTable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
-}
-
-#myTable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd;
-}
-
-#myTable tr.header, #myTable tr:hover {
-    /* Add a grey background color to the table header and on hover */
-    background-color: #f1f1f1;
-}
-
